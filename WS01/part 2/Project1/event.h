@@ -2,10 +2,11 @@
 #ifndef __EVENT_H__
 #define __EVENT_H__
 
-extern unsigned int g_sysClock;
 
 namespace sdds
 {
+	extern unsigned int g_sysClock;
+
 	class Event
 	{
 		char *m_event;

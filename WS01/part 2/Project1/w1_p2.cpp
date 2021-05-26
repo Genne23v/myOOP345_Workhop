@@ -7,7 +7,7 @@
 #include "event.h"
 #include "event.h"
 
-unsigned int ::g_sysClock;
+unsigned int g_sysClock;
 
 using namespace sdds;
 

@@ -8,12 +8,13 @@ namespace sdds
 {
 	class Event
 	{
-		char m_event[128];
+		char *m_event;
 		unsigned int m_time;
 	public:
 		Event();
 		Event(Event& src);
-		//~Event();
+		~Event();
+		void operator=(Event& src);
 		void set();
 		void set(char* buf);
 		void display();

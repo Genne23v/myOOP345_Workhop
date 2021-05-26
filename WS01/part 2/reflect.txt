@@ -1,0 +1,8 @@
+Name: Wonkeun No
+Student ID: 145095196
+Section: NBB
+
+I learned many things in this week’s workshop that I thought I knew but actually I didn’t. First, I know how to use extern and static and when to use them. I remember I tried to use ‘extern’ in one of last semester’s workshop, but I couldn’t fix the issue, I didn’t even know what the issue was. I had same struggle this week, now I understand that simply putting ‘extern’ keyword doesn’t make the whole program aware of its existence. So, now I understand better about compile process and external linkage. And I have understanding how to use static variable effectively. Static can be very useful to manage a situation like certain class ticket numbering. It could be an ID for database entity. And lastly, this is the first time I use main function’s arguments. I looked it up many times, but somehow, I didn’t quite understand. I think I finally grasp the usage. Although it’s not a big task as the first workshop of the semester, it is a lot of useful learning that I couldn’t understand earlier. 
+
+
+

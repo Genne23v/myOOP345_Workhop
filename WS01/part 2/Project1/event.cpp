@@ -7,30 +7,50 @@ namespace sdds
 {
 	Event::Event()
 	{
-		m_event[0] = '\0';
+		m_event = nullptr;
 		m_time = 0;
 	}
 	Event::Event(Event& src)
 	{
-		//m_time = src.m_time;
-		m_time = g_sysClock;
-		strcpy(m_event, src.m_event);
+		m_time = src.m_time;
+		if (src.m_event != nullptr)
+		{
+			m_event = new char[strlen(src.m_event) + 1];
+			strcpy(m_event, src.m_event);
+		}
+		
+	}
+	Event::~Event()
+	{
+		delete[] m_event;
+	}
+	void Event::operator=(Event& src)
+	{
+		if (this != &src && src.m_event != nullptr)
+		{
+			m_time = src.m_time;
+			m_event = new char[strlen(src.m_event) + 1];
+			strcpy(m_event, src.m_event);
+		}
 	}
 	void Event::set()
 	{
-		m_event[0] = '\0';
+		delete[] m_event;
+		m_event = nullptr;
 		m_time = 0;
 	}
 	void Event::set(char* buf)
 	{
 		if (buf != nullptr)
 		{
+			delete[] m_event;
+			m_event = new char[strlen(buf) + 1];
 			strcpy(m_event, buf);
 			m_time = g_sysClock;
 		} 
 		else
 		{
-			m_event[0] = '\0';
+			m_event = nullptr;
 			m_time = 0;
 		}
 	}
@@ -46,7 +66,7 @@ namespace sdds
 
 		std::cout.width(2);
 		std::cout.fill(' ');
-		if (this->m_event[0] != '\0')
+		if (this->m_event != nullptr)
 		{
 			std::cout << counter << ". ";
 			std::cout.width(2);
@@ -59,7 +79,6 @@ namespace sdds
 			std::cout.fill('0'); 
 			std::cout << secs;
 			std::cout << " => " << m_event << std::endl;
-			//std::cout.unsetf();
 		}
 		else
 		{
@@ -67,8 +86,5 @@ namespace sdds
 		}
 		counter++;
 	}
-	/*void Event::copy(Event& src)
-	{
 
-	}*/
 }

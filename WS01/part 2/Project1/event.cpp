@@ -18,11 +18,15 @@ namespace sdds
 			m_event = new char[strlen(src.m_event) + 1];
 			strcpy(m_event, src.m_event);
 		}
-		
+		else
+		{
+			m_event = nullptr;
+		}
 	}
 	Event::~Event()
 	{
-		delete[] m_event;
+		if (m_event != nullptr)
+			delete[] m_event;
 	}
 	void Event::operator=(Event& src)
 	{

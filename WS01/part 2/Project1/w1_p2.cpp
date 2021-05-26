@@ -7,9 +7,9 @@
 #include "event.h"
 #include "event.h"
 
-using namespace sdds;
-
 unsigned int ::g_sysClock;
+
+using namespace sdds;
 
 /* input file format: a comma separated set of fields; some fields have a single parameter
 T175,SComputer Starting,P,

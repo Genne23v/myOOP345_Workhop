@@ -1,6 +1,5 @@
 #include <iostream>
 #include <fstream>
-#include <cstring>
 #include "StringSet.h"
 
 namespace sdds
@@ -42,11 +41,7 @@ namespace sdds
 
 		file.clear();
 		file.seekg(0);
-		/*int i = 0;
-		while (file)
-		{
-			m_content[i++] = (file.get() == ' ');
-		}*/
+		
 		for (size_t i = 0; i < numOfStrings; i++)
 		{
 			std::getline(file, m_content[i], ' ');
@@ -79,11 +74,11 @@ namespace sdds
 	{
 		std::string tmp; 
 		
-		if (m_content != nullptr)
+		if (m_content != nullptr && idx < numOfStrings)
 		{
 			tmp = m_content[idx];
 		}
-		else if (m_content == nullptr || idx >= numOfStrings)
+		else //if (m_content == nullptr || idx >= numOfStrings)
 		{
 			tmp = "";
 		}

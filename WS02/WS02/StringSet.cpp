@@ -17,7 +17,7 @@ namespace sdds
 
 			m_content = new std::string[numOfStrings];
 			
-			for (int i = 0; i < numOfStrings; i++)
+			for (size_t i = 0; i < numOfStrings; i++)
 			{
 				m_content[i] = src.m_content[i];
 			}
@@ -47,7 +47,7 @@ namespace sdds
 		{
 			m_content[i++] = (file.get() == ' ');
 		}*/
-		for (int i = 0; i < numOfStrings; i++)
+		for (size_t i = 0; i < numOfStrings; i++)
 		{
 			std::getline(file, m_content[i], ' ');
 		}
@@ -64,7 +64,7 @@ namespace sdds
 			}
 				m_content = new std::string[numOfStrings];
 				
-				for (int i = 0; i < numOfStrings; i++)
+				for (size_t i = 0; i < numOfStrings; i++)
 				{
 					m_content[i] = src.m_content[i];
 				}

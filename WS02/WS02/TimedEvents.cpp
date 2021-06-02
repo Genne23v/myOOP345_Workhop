@@ -48,6 +48,7 @@ namespace sdds
 	}
 	std::ostream& operator<<(std::ostream& os, const TimedEvents& src)
 	{
+		std::cout << "--------------------------" << std::endl;
 		std::cout << "Execution Times:" << std::endl;
 		std::cout << "--------------------------" << std::endl;
 		

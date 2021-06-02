@@ -78,7 +78,7 @@ namespace sdds
 		{
 			tmp = m_content[idx];
 		}
-		else //if (m_content == nullptr || idx >= numOfStrings)
+		else 
 		{
 			tmp = "";
 		}

@@ -1,7 +1,6 @@
 #pragma once
 #ifndef TIMED_EVENTS
 #define TIMED_EVENTS
-#include <iostream>
 #include <chrono>
 
 namespace sdds
@@ -21,8 +20,8 @@ namespace sdds
 		std::chrono::steady_clock::time_point m_startTime;
 		std::chrono::steady_clock::time_point m_endTime;
 	public:
-		TimedEvents();
-		~TimedEvents();
+		TimedEvents() {};
+		~TimedEvents() {};
 		void startClock();
 		void stopClock();
 		void addEvent(const char* event);
@@ -31,7 +30,7 @@ namespace sdds
 	};
 }
 
-#endif // 
+#endif // !TIMED_EVENTS
 
 
 

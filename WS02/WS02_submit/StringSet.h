@@ -10,7 +10,7 @@ namespace sdds
 		std::string *m_content = nullptr;
 		size_t numOfStrings = 0;
 	public:
-		StringSet();
+		StringSet() {};
 		StringSet(const StringSet& src);
 		StringSet(StringSet&& src);
 		StringSet(char* nameOfFile);
@@ -22,4 +22,4 @@ namespace sdds
 	};
 }
 
-#endif // !__STRING_SET_H__
+#endif // !STRING_SET_H

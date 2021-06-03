@@ -6,14 +6,6 @@
 
 namespace sdds
 {
-	TimedEvents::TimedEvents()
-	{
-		
-	}
-	TimedEvents::~TimedEvents()
-	{
-		
-	}
 	Event::~Event()
 	{
 		delete[] m_eventName;
@@ -22,7 +14,6 @@ namespace sdds
 	void TimedEvents::startClock()
 	{
 		m_startTime = std::chrono::steady_clock::now();
-
 	}
 	void TimedEvents::stopClock()
 	{
@@ -64,5 +55,4 @@ namespace sdds
 
 		return os;
 	}
-
 }

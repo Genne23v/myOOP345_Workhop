@@ -2,6 +2,7 @@
 #ifndef TIMED_EVENTS
 #define TIMED_EVENTS
 #include <chrono>
+#include <iostream>
 
 namespace sdds
 {

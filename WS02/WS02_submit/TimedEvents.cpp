@@ -1,7 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include "TimedEvents.h"
 #include <cstring>
-#include <iostream>
 
 
 namespace sdds

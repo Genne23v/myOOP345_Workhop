@@ -35,7 +35,7 @@ namespace sdds
 	}
 
 	template <typename V, typename K>
-	Pair<V,K>::Pair<V, K>(const K& key, const V& value)
+	Pair<V, K>::Pair(const K& key, const V& value)
 	{
 		m_key = key;
 		m_value = value;

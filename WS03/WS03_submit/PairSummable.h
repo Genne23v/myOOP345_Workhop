@@ -1,5 +1,5 @@
 // Workshop 3: Part 2
-// Date: 2021/06/11
+// Date: 2021/06/12
 // Author: Wonkeun No
 // Student #: 145095196
 // Description:
@@ -12,7 +12,6 @@
 #define PAIR_SUMMABLE_H
 #include <iostream>
 #include <string>
-#include <typeinfo>
 #include "Pair.h"
 
 namespace sdds
@@ -60,13 +59,27 @@ namespace sdds
 	template <typename V, typename K>
 	PairSummable<V, K>& PairSummable<V, K>::operator+=(const PairSummable<V, K>& src)
 	{
-		Pair<V, K>::updateValue(src.value());
+		PairSummable<V, K> tmp(src.key(), this->value() + src.value());
+		*this = tmp;
 		return *this;
 	}
 	template <>
 	PairSummable<std::string, std::string>& PairSummable<std::string, std::string>::operator+=(const PairSummable<std::string, std::string>& src)
 	{
-		Pair<std::string, std::string>::updateValue(src.value());
+		std::string tmpStr;
+
+		if (this->value().empty())
+		{
+			tmpStr = src.value();
+		}
+		else
+		{
+			tmpStr = this->value() + ", " + src.value();
+		}
+		
+		PairSummable<std::string, std::string> tmp(src.key(), tmpStr);
+		*this = tmp;
+		
 		return *this;
 	}
 

@@ -28,13 +28,9 @@ int main(int argc, char* argv[])
 		return 2;
 	}
 
-	// Process the first file
-	// The values in this file will be interpreted as strings
-	//     Sumation means string concatenation.
 	{
 		sdds::SetSummable<15, sdds::PairSummable<std::string, std::string>> products; 
 
-		// get the data from the file
 		{
 			std::ifstream input(argv[1]);
 			if (!input)
@@ -71,13 +67,9 @@ int main(int argc, char* argv[])
 		std::cout << std::endl;
 	}
 
-	// Process the second file
-	// The values in this file will be interpreted as numbers
-	//     Sumation means mathematical addition of numbers.
 	  {
 		sdds::SetSummable<25, sdds::PairSummable<int, std::string>> ticketSales;
 
-		// get the data from the file
 		{
 			std::ifstream input(argv[2]);
 			if (!input)
@@ -117,6 +109,5 @@ int main(int argc, char* argv[])
 		std::cout << " Senior Tickets  = " << std::setw(7) << ticketSales.accumulate("Senior").value() * seniorFare << std::endl;
 	}
 
-	// done
 	return 0;
 }

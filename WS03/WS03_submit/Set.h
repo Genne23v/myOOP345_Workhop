@@ -1,5 +1,5 @@
 // Workshop 3: Part 2
-// Date: 2021/06/11
+// Date: 2021/06/12
 // Author: Wonkeun No
 // Student #: 145095196
 // Description:
@@ -34,7 +34,6 @@ namespace sdds
 	template <unsigned int N, typename T>
 	const T& Set<N, T>::get(size_t idx) const
 	{
-		//if (idx >= 0 && idx < N)
 		return m_arr[idx];
 	}
 

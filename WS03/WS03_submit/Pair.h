@@ -1,5 +1,5 @@
 // Workshop 3: Part 2
-// Date: 2021/06/11
+// Date: 2021/06/12
 // Author: Wonkeun No
 // Student #: 145095196
 // Description:
@@ -25,8 +25,6 @@ namespace sdds
 		const V& value() const;
 		const K& key() const;
 		virtual void display(std::ostream& os) const; 
-		Pair<V, K>& operator+=(const Pair<V, K>& src);// ADDED
-		void updateValue(const V& value);  //ADDED
 	};
 
 	template <typename V, typename K>
@@ -60,34 +58,6 @@ namespace sdds
 	{
 		os << m_key << " : " << m_value << std::endl;
 	}
-	//ADDED
-	template <typename V, typename K>
-	Pair<V, K>& Pair<V, K>::operator+=(const Pair<V, K>& src)
-	{
-		m_value += src.value();
-	}
-	//ADDED 
-	template <typename V, typename K>
-	void Pair<V, K>::updateValue(const V& value)
-	{
-		m_value += value;
-	}
-
-	template <>
-	void Pair<std::string, std::string>::updateValue(const std::string& src)
-	{
-		if (m_value.empty())
-		{
-			m_value = src;
-		}
-		else 
-		{
-			m_value += (", " + src);
-		}
-	}
 }
-
-
-
 
 #endif // !PAIR_H

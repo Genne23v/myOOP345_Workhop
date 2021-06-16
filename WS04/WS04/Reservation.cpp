@@ -66,7 +66,7 @@ namespace sdds
 		}
 		else 
 		{
-			os << "Drink";
+			os << "Drinks";
 		}
 		os << " on day " << src.m_day << " @ " << src.m_hour << ":00 for ";
 

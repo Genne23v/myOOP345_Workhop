@@ -8,8 +8,11 @@ namespace sdds
 {
 	std::string removeSpaces(std::string str)
 	{
-		str.erase(std::remove(str.begin(), str.end(), ' '), str.end());
-		return str;
+		//str.erase(std::remove(str.begin(), str.end(), ' '), str.end());
+		int strBegin = str.find_first_not_of(' ');
+		int strEnd = str.find_last_not_of(' ');
+
+		return str.substr(strBegin, (strEnd - strBegin +1));
 	}
 	Reservation::Reservation(const std::string& res)
 	{

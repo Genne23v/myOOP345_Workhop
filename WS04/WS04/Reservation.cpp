@@ -38,7 +38,7 @@ namespace sdds
 
 	std::ostream& operator<<(std::ostream& os, const Reservation src)
 	{
-		os << "Reservation";
+		os << "Reservation ";
 		os.width(10);
 		os.setf(std::ios::right);
 		os << src.m_reserveId << ": ";

@@ -117,10 +117,10 @@ namespace sdds
 	}
 	ConfirmationSender::~ConfirmationSender()
 	{
-		for (auto i = 0u; i < m_size; i++)
+		/*for (auto i = 0u; i < m_size; i++)
 		{
 			delete m_reservation[i];
-		}
+		}*/
 		delete[] m_reservation;
 	}
 	ConfirmationSender::ConfirmationSender(const ConfirmationSender& src)

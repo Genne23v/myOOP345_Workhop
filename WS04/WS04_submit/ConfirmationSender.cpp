@@ -53,7 +53,7 @@ namespace sdds
 	{
 		bool exist = false;
 		const Reservation** tmpPtr = nullptr;
-		int index = -999999;
+		size_t index = -999999;
 		
 		for (size_t i = 0; i < m_size; i++)
 		{

@@ -15,12 +15,12 @@ namespace sdds
 {
 	Restaurant::Restaurant(const Reservation* reservation[], size_t cnt) 
 	{
-		m_arr = new const Reservation*[cnt];
+		m_arr = new const Reservation*[cnt]; //LEAK
 		m_size = cnt;
 
 		for (size_t i = 0; i < size(); i++)
 		{
-			m_arr[i] = new const Reservation(reservation[i]);
+			m_arr[i] = new const Reservation(reservation[i]); //LEAK
 		}
 	}
 
@@ -53,6 +53,14 @@ namespace sdds
 		return os;
 	}
 
+	Restaurant::~Restaurant()
+	{
+		for (auto i = 0u; i < m_size; i++)
+		{
+			delete m_arr[i];
+		}
+		delete[] m_arr;
+	}
 	Restaurant::Restaurant(const Restaurant& src)
 	{
 		*this = src;
@@ -80,12 +88,12 @@ namespace sdds
 		if (this != &src)
 		{
 			delete[] m_arr;
-			m_arr = new const Reservation * [src.m_size];
+			m_arr = new const Reservation * [src.m_size]; //LEAK
 			m_size = src.m_size;
 
 			for (size_t i = 0; i < size(); i++)
 			{
-				m_arr[i] = new const Reservation(src.m_arr[i]);
+				m_arr[i] = new const Reservation(src.m_arr[i]); //LEAK
 			}
 		}
 		

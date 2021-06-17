@@ -21,6 +21,7 @@ namespace sdds
 		size_t m_size=0;
 	public:
 		ConfirmationSender() {};
+		~ConfirmationSender();
 		ConfirmationSender(const ConfirmationSender& src);
 		ConfirmationSender(ConfirmationSender&& src) noexcept;
 		ConfirmationSender& operator=(const ConfirmationSender& src);

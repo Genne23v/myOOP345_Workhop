@@ -18,12 +18,13 @@ namespace sdds
 	class Restaurant
 	{
 		const Reservation** m_arr{ nullptr };
-		size_t m_size;
+		size_t m_size=0;
 	public:
 		Restaurant(const Reservation* reservation[], size_t cnt);
 		size_t size() const;
 		friend std::ostream& operator<<(std::ostream& os, const Restaurant& src);
 		
+		~Restaurant();
 		Restaurant(const Restaurant& src);
 		Restaurant(Restaurant&& src) noexcept;
 		Restaurant& operator=(const Restaurant& src); 

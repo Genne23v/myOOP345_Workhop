@@ -115,7 +115,14 @@ namespace sdds
 
 		return os;
 	}
-
+	ConfirmationSender::~ConfirmationSender()
+	{
+		for (auto i = 0u; i < m_size; i++)
+		{
+			delete m_reservation[i];
+		}
+		delete[] m_reservation;
+	}
 	ConfirmationSender::ConfirmationSender(const ConfirmationSender& src)
 	{
 		*this = src;
@@ -129,7 +136,7 @@ namespace sdds
 		if (this != &src)
 		{
 			m_size = src.m_size;
-			m_reservation = new const Reservation * [m_size];
+			m_reservation = new const Reservation * [m_size]; //LEAK
 
 			for (size_t i = 0; i < m_size; i++)
 			{
@@ -144,7 +151,7 @@ namespace sdds
 		{
 			m_size = src.m_size;
 			src.m_size = 0;
-			m_reservation = new const Reservation * [m_size];
+			m_reservation = new const Reservation * [m_size]; //LEAK
 
 			for (size_t i = 0; i < m_size; i++)
 			{

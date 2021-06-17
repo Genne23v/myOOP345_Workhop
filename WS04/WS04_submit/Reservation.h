@@ -28,39 +28,9 @@ namespace sdds
 		Reservation(const std::string& res);
 		friend std::ostream& operator<<(std::ostream& os, const Reservation src);
 		
-		//BELOW ADDED
-		Reservation(const Reservation* src)
-		{
-			*this = src;
-			/*m_reserveId = src->m_reserveId;
-			m_name = src->m_name;
-			m_email = src->m_email;
-			m_numPeople = src->m_numPeople;
-			m_day = src->m_day;
-			m_hour = src->m_hour;*/
-		}
-		Reservation& operator=(const Reservation *src) 
-		{ 
-			m_reserveId = src->m_reserveId;
-			m_name = src->m_name;
-			m_email = src->m_email;
-			m_numPeople = src->m_numPeople;
-			m_day = src->m_day;
-			m_hour = src->m_hour;
-			
-			return *this; 
-		};
-		Reservation& operator=(const Reservation& src)
-		{
-			m_reserveId = src.m_reserveId;
-			m_name = src.m_name;
-			m_email = src.m_email;
-			m_numPeople = src.m_numPeople;
-			m_day = src.m_day;
-			m_hour = src.m_hour;
-
-			return *this;
-		};
+		Reservation(const Reservation* src);
+		Reservation& operator=(const Reservation *src);
+		Reservation& operator=(const Reservation& src);
 	};
 }
 #endif // !SDDS_RESERVATION_H

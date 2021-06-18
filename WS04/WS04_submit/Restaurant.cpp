@@ -87,7 +87,12 @@ namespace sdds
 	{
 		if (this != &src)
 		{
-			delete[] m_arr;
+			if (m_arr != nullptr)
+			{
+				for (auto i = 0u; i < m_size; i++)
+					delete m_arr[i];
+				delete[] m_arr;
+			}
 			m_arr = new const Reservation * [src.m_size]; //LEAK
 			m_size = src.m_size;
 

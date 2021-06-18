@@ -158,7 +158,7 @@ namespace sdds
 				m_reservation[i] = src.m_reservation[i];
 			}
 			
-			delete[] src.m_reservation;
+			//delete[] src.m_reservation;
 		}
 		return *this;
 	}

@@ -8,19 +8,18 @@
 // I have done all the coding by myself and only copied the code that my professor
 // provided to complete my workshops and assignments.
 ///////////////////////////////////////////////////
-
 #include "Restaurant.h"
 
 namespace sdds
 {
 	Restaurant::Restaurant(const Reservation* reservation[], size_t cnt) 
 	{
-		m_arr = new const Reservation*[cnt]; //LEAK
+		m_arr = new const Reservation*[cnt]; 
 		m_size = cnt;
 
 		for (size_t i = 0; i < size(); i++)
 		{
-			m_arr[i] = new const Reservation(reservation[i]); //LEAK
+			m_arr[i] = new const Reservation(reservation[i]); 
 		}
 	}
 
@@ -93,12 +92,12 @@ namespace sdds
 					delete m_arr[i];
 				delete[] m_arr;
 			}
-			m_arr = new const Reservation * [src.m_size]; //LEAK
+			m_arr = new const Reservation * [src.m_size]; 
 			m_size = src.m_size;
 
 			for (size_t i = 0; i < size(); i++)
 			{
-				m_arr[i] = new const Reservation(src.m_arr[i]); //LEAK
+				m_arr[i] = new const Reservation(src.m_arr[i]); 
 			}
 		}
 		

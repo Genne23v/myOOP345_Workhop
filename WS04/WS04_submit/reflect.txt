@@ -2,3 +2,6 @@ Name: Wonkeun No
 Student ID: 145095196
 Section: NBB
 
+I see the difference between composition and aggregation in this workshop from looking at both classes’ ownership of Reservation class. Restaurant class has the ownership of creating and destroying Reservation objects by deep copy. So, Restaurant class has the full ownership of Reservation class. However, ConfirmationSender class doesn’t create a Reservation object inside the class. It just uses Reservation by accessing indirectly. So, it has a pointer to all Reservation objects but it doesn’t allocate any memory for Reservation object inside the class. In addition, Restaurant constructor receives Reservation objects as a parameter while ConfirmationSender has no parameter. 
+Another difference is in move and copy operations. Composition needs to deallocate and re-allocate memory for copy of other objects (loop delete m_arr[i]; delete[] m_arr;). But aggregation just need to set up a pointer holding the addresses of pointers. (m_reservation = new const Reservation*[m_size]. This pointer holds the addresses of Reservation objects. 
+It is a very difficult workshop but it gave a lot opportunities of learning double pointer and type difference with const as well as different design technique by class relationship. 

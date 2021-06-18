@@ -8,7 +8,6 @@
 // I have done all the coding by myself and only copied the code that my professor
 // provided to complete my workshops and assignments.
 ///////////////////////////////////////////////////
-
 #include "ConfirmationSender.h"
 
 namespace sdds
@@ -35,7 +34,7 @@ namespace sdds
 
 			delete[] m_reservation;
 			m_size++;
-			m_reservation = new const Reservation * [m_size];
+			m_reservation = new const Reservation*[m_size];
 
 			for (size_t i = 0; i < m_size-1; i++)
 				m_reservation[i] = tmpPtr[i];
@@ -117,10 +116,6 @@ namespace sdds
 	}
 	ConfirmationSender::~ConfirmationSender()
 	{
-		/*for (auto i = 0u; i < m_size; i++)
-		{
-			delete m_reservation[i];
-		}*/
 		delete[] m_reservation;
 	}
 	ConfirmationSender::ConfirmationSender(const ConfirmationSender& src)
@@ -136,7 +131,7 @@ namespace sdds
 		if (this != &src)
 		{
 			m_size = src.m_size;
-			m_reservation = new const Reservation * [m_size]; //LEAK
+			m_reservation = new const Reservation*[m_size]; 
 
 			for (size_t i = 0; i < m_size; i++)
 			{
@@ -151,14 +146,13 @@ namespace sdds
 		{
 			m_size = src.m_size;
 			src.m_size = 0;
-			m_reservation = new const Reservation * [m_size]; //LEAK
+			m_reservation = new const Reservation*[m_size]; 
 
 			for (size_t i = 0; i < m_size; i++)
 			{
 				m_reservation[i] = src.m_reservation[i];
 			}
 			
-			//delete[] src.m_reservation;
 		}
 		return *this;
 	}

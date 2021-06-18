@@ -78,44 +78,44 @@ int main(int argc, char** argv)
 		std::cout << "R: Testing Constructor\n";
 		std::cout << "==========================\n";
 		sdds::Restaurant res1(ppReservations, cnt);
-		std::cout << res1;  // 1
+		std::cout << res1;  
 		std::cout << "==========================\n\n";
 
 		std::cout << "R: Testing Copy Constructor\n";
 		std::cout << "==========================\n";
 		sdds::Restaurant res2(res1);
-		std::cout << res1;  // 2
-		std::cout << res2;  // 3
+		std::cout << res1;  
+		std::cout << res2;  
 		std::cout << "==========================\n\n";
 
 		{
 			std::cout << "R: Testing Copy Assign\n";
 			std::cout << "==========================\n";
 			res2 = res2;
-			std::cout << res1;  // 4
-			std::cout << res2;  // 5
+			std::cout << res1;
+			std::cout << res2;
 			sdds::Restaurant res3(ppReservations + 3, 4);
 			res2 = res3;
-			std::cout << res2;  // 6
-			std::cout << res3;  // 7
+			std::cout << res2;
+			std::cout << res3;
 			std::cout << "==========================\n\n";
 		}
 
 		std::cout << "R: Testing Move Constructor\n";
 		std::cout << "==========================\n";
 		sdds::Restaurant res3(std::move(res2));
-		std::cout << res2;  // 8
-		std::cout << res3;  // 9
+		std::cout << res2;  
+		std::cout << res3;  
 		std::cout << "==========================\n\n";
 
 		std::cout << "R: Testing Move Assign\n";
 		std::cout << "==========================\n";
 		res3 = std::move(res3);
-		std::cout << res2;  // 10
-		std::cout << res3;  // 11
+		std::cout << res2;  
+		std::cout << res3;  
 		res2 = std::move(res3);
-		std::cout << res2;  // 12
-		std::cout << res3;  // 13
+		std::cout << res2;  
+		std::cout << res3;  
 		std::cout << "==========================\n\n";
 	}
 

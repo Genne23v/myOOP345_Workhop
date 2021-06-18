@@ -9,14 +9,12 @@
 // provided to complete my workshops and assignments.
 ///////////////////////////////////////////////////
 #include <sstream>
-#include <algorithm>
 #include "Reservation.h"
 
 namespace sdds
 {
 	std::string removeSpaces(std::string str)
 	{
-		//str.erase(std::remove(str.begin(), str.end(), ' '), str.end());
 		int strBegin = str.find_first_not_of(' ');
 		int strEnd = str.find_last_not_of(' ');
 

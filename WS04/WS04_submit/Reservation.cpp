@@ -93,28 +93,11 @@ namespace sdds
 
 	Reservation::Reservation(const Reservation* src)
 	{
-		*this = src;
-	}
-	Reservation& Reservation::operator=(const Reservation* src)
-	{
 		m_reserveId = src->m_reserveId;
 		m_name = src->m_name;
 		m_email = src->m_email;
 		m_numPeople = src->m_numPeople;
 		m_day = src->m_day;
 		m_hour = src->m_hour;
-
-		return *this;
-	};
-	Reservation& Reservation::operator=(const Reservation& src)
-	{
-		m_reserveId = src.m_reserveId;
-		m_name = src.m_name;
-		m_email = src.m_email;
-		m_numPeople = src.m_numPeople;
-		m_day = src.m_day;
-		m_hour = src.m_hour;
-
-		return *this;
-	};
+	}
 }

@@ -29,8 +29,6 @@ namespace sdds
 		friend std::ostream& operator<<(std::ostream& os, const Reservation src);
 		
 		Reservation(const Reservation* src);
-		Reservation& operator=(const Reservation *src);
-		Reservation& operator=(const Reservation& src);
 	};
 }
 #endif // !SDDS_RESERVATION_H

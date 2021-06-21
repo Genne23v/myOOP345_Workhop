@@ -76,14 +76,8 @@ namespace sdds
 		os << src.country() << " | " << src.year() << " | ";
 		os.width(6);
 
-		if (src.m_price >= 100)
-		{
-			os.precision(5);
-		}
-		else
-		{
-			os.precision(4);
-		}
+		os.setf(std::ios::fixed);
+			os.precision(2);
 		os << src.m_price;
 		os << " | " << src.m_desc << std::endl;
 

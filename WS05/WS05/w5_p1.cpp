@@ -107,7 +107,7 @@ int main(int argc, char** argv)
 	//         using the lambda defined above.
 	for (auto i = 0u; i < 7; i++)
 	{
-		std::cout << library[i];
+		updatePrice(library[i]);
 	}
 
 
@@ -117,7 +117,6 @@ int main(int argc, char** argv)
 	// TODO: iterate over the library and print each book to the screen
 	for (auto i = 0u; i < 7; i++)
 	{
-		updatePrice(library[i]);
 		std::cout << library[i];
 	}
 

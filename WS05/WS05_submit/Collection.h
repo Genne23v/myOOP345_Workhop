@@ -16,12 +16,11 @@
 
 namespace sdds
 {
-	//template <template <typename> class T>
 	template <class T>
 	class Collection
 	{
 		std::string m_name;
-		T *m_arr;
+		T* m_arr{ nullptr };
 		size_t m_size = 0;
 		void (*observerFunc)(const Collection<T>&, const T&) { nullptr };
 	public:

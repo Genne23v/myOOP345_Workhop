@@ -128,7 +128,7 @@ int main(int argc, char** argv)
 	std::cout << "-----------------------------------------\n";
 	std::cout << "The library content (updated prices)\n";
 	std::cout << "-----------------------------------------\n";
-	std::cout << library << std::endl;
+	std::cout << library;
 	std::cout << "-----------------------------------------\n\n";
 
 	Collection<Movie> theCollection("Action Movies");

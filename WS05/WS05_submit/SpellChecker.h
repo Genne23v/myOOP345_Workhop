@@ -22,7 +22,6 @@ namespace sdds
 		std::string m_badWords[ARRAY_SIZE];
 		std::string m_goodWords[ARRAY_SIZE];
 		unsigned int m_correction[ARRAY_SIZE]{0,};
-		//static unsigned int misspellCnt;
 	public:
 		SpellChecker(const char* filename);
 		void operator()(std::string& text);

@@ -14,11 +14,10 @@
 
 namespace sdds
 {
-	//template <class T>
 	class Movie
 	{
 		std::string m_title;
-		size_t m_year=0;
+		size_t m_year = 0;
 		std::string m_desc;
 	public:
 		Movie() {};

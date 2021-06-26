@@ -9,7 +9,6 @@
 // provided to complete my workshops and assignments.
 ///////////////////////////////////////////////////
 #include <sstream>
-#include <string>
 #include "Book.h"
 #define BOOK_ARR 6
 
@@ -36,8 +35,6 @@ namespace sdds
 		m_price*= num;
 		return m_price;
 	}
-	
-	
 	
 	Book::Book(const std::string& strBook)
 	{

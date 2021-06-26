@@ -15,7 +15,6 @@
 
 namespace sdds
 {
-	//template <class S>
 	class Book
 	{
 		std::string m_author;
@@ -41,7 +40,6 @@ namespace sdds
 	template <class T>
 	void Book::fixSpelling(T& spellChecker)
 	{
-		//spellChecker(m_title);
 		spellChecker(m_desc);
 	}
 

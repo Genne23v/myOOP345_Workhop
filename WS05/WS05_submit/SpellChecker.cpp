@@ -9,9 +9,6 @@
 // provided to complete my workshops and assignments.
 ///////////////////////////////////////////////////
 #include <fstream>
-//#include <string>
-
-//#include <cerrno>
 #include "SpellChecker.h"
 
 namespace sdds
@@ -19,15 +16,15 @@ namespace sdds
 	SpellChecker::SpellChecker(const char* filename)
 	{
 		std::ifstream file(filename);
-		std::string tmp[12];
+		std::string tmp[ARRAY_SIZE*2];
 
 			if (file)
 			{
-				for (auto i = 0; i < 12; i++)
+				for (auto i = 0; i < ARRAY_SIZE*2; i++)
 					file >> tmp[i];
 
 				int j = 0, k = 0;
-				for (auto i = 0; i < 12; i++)
+				for (auto i = 0; i < ARRAY_SIZE*2; i++)
 				{
 					if (i % 2 == 0)
 					{
@@ -37,7 +34,6 @@ namespace sdds
 					{
 						m_goodWords[k++] = tmp[i];
 					}
-					
 				}
 			}
 			else
@@ -46,7 +42,6 @@ namespace sdds
 			}
 	}
 
-	//unsigned int findCnt = 0;
 	void SpellChecker::operator()(std::string& text)
 	{
 		
@@ -62,7 +57,6 @@ namespace sdds
 					found = true;
 					m_correction[i]++;
 				}
-
 			} while (found);
 		}
 	}

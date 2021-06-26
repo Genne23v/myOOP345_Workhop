@@ -30,9 +30,8 @@ namespace sdds
 		return m_year;
 	}
 	
-	double& Book::price(double& num)
+	double& Book::price()
 	{
-		m_price*= num;
 		return m_price;
 	}
 	

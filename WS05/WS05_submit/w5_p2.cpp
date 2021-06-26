@@ -105,11 +105,11 @@ int main(int argc, char** argv)
 	{
 		if (book.country() == "US")
 		{
-			book.price(usdToCadRate);
+			book.price() = book.price() * usdToCadRate;
 		}
 		else if (book.country() == "UK" && (book.year() >= 1990 && book.year() <= 1999))
 		{
-			book.price(gbpToCadRate);
+			book.price() = book.price() * gbpToCadRate;
 		}
 	};
 

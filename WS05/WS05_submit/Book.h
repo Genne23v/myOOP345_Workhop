@@ -28,7 +28,7 @@ namespace sdds
 		const std::string& title() const;
 		const std::string& country() const;
 		const size_t& year() const;
-		double& price(double& num);	//CAN I CHANGE THIS?
+		double& price();
 		Book(const std::string& strBook);
 
 		template <class T>

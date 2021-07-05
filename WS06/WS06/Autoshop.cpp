@@ -27,6 +27,6 @@ namespace sdds
 	Autoshop::~Autoshop()
 	{
 		//delete[] m_vehicles;
-		std::cout << "Autoshop destructed" << std::endl;
+		//std::cout << "Autoshop destructed" << std::endl;
 	}
 }

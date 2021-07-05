@@ -55,7 +55,6 @@ namespace sdds
 	}
 	Car::~Car()
 	{
-		std::cout << "Car destructed" << std::endl;
 	}
 	std::string Car::condition() const
 	{

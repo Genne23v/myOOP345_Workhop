@@ -26,7 +26,8 @@ namespace sdds
 	}
 	Autoshop::~Autoshop()
 	{
-		//delete[] m_vehicles;
-		//std::cout << "Autoshop destructed" << std::endl;
+		std::vector<Vehicle*>::iterator it;
+		for (auto it = m_vehicles.begin(); it != m_vehicles.end(); it++)
+			delete *it;
 	}
 }

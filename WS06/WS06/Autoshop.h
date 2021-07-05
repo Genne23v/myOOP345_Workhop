@@ -12,7 +12,7 @@ namespace sdds
 	public:
 		Autoshop& operator+=(Vehicle* theVehicle);
 		void display(std::ostream& out) const;
-
+		~Autoshop();
 	};
 }
 #endif // !SDDS_AUTOSHOP_H

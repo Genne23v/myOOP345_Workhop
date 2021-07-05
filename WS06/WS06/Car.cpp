@@ -16,7 +16,7 @@ namespace sdds
 	{
 		std::string tmp[size];
 
-		int i = 0; 
+		size_t i = 0; 
 		while (i < size)
 		{
 			if (i < size - 1)

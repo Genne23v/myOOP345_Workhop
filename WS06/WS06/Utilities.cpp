@@ -8,7 +8,7 @@ namespace sdds
 	{
 		Vehicle* vehicle;
 
-		char c;
+		char c = ' ';
 		in.get(c);
 
 		if (c == 'c' || c == 'C')

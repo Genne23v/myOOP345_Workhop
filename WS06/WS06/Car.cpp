@@ -67,7 +67,7 @@ namespace sdds
 	}
 	void Car::display(std::ostream& out) const
 	{
-		out << "|";
+		out << "| ";
 		out.setf(std::ios::right);
 		out.width(10);
 		out << m_maker << " | ";

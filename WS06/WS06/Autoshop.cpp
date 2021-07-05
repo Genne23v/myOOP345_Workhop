@@ -21,6 +21,12 @@ namespace sdds
 			auto tmp = (*i);
 			tmp->display(out);
 		}
-
+		
+		out << "--------------------------------" << std::endl;
+	}
+	Autoshop::~Autoshop()
+	{
+		//delete[] m_vehicles;
+		std::cout << "Autoshop destructed" << std::endl;
 	}
 }

@@ -77,6 +77,6 @@ namespace sdds
 		out << condition() << " | ";
 		out.precision(2);
 		out.setf(std::ios::fixed);
-		out << topSpeed() << " | " << std::endl;
+		out << topSpeed() << " |" << std::endl;
 	}
 }

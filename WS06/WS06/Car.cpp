@@ -53,6 +53,10 @@ namespace sdds
 		
 		m_topSpeed = stod(removeSpaces(tmp[3]));
 	}
+	Car::~Car()
+	{
+		std::cout << "Car destructed" << std::endl;
+	}
 	std::string Car::condition() const
 	{
 		return m_condition;
@@ -63,6 +67,7 @@ namespace sdds
 	}
 	void Car::display(std::ostream& out) const
 	{
+		out << "|";
 		out.setf(std::ios::right);
 		out.width(10);
 		out << m_maker << " | ";

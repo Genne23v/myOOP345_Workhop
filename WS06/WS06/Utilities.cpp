@@ -6,8 +6,7 @@ namespace sdds
 {
 	Vehicle* createInstance(std::istream& in)
 	{
-		std::string tmpStr;
-		Vehicle* vehicle = nullptr;
+		Vehicle* vehicle;
 
 		char c;
 		in.get(c);
@@ -16,7 +15,10 @@ namespace sdds
 		{
 			vehicle = new Car(in);
 		}
-				
+		else
+		{
+			vehicle = nullptr;
+		}
 		return vehicle;
 	}
 }

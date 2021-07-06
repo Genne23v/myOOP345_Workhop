@@ -1,0 +1,7 @@
+Name: Wonkeun No
+Student ID: 145095196
+Section: NBB
+
+I think the reason why vector allocates memory dynamically is that vector needs to allocate memory in a contiguous location. It can’t guarantee that the same location will have the required amount of contiguous memory as per request. So, vector should look at the available memory location that can allocate requested amount of memory contiguously. 
+My code has sections that can validate the individual input and produce an appropriate error message along with an exception object. Then, error message is displayed in the main function. In this way, I think the logic flow is not harmed by error handling and each error scenario throws a proper error message so that user can identify where an error occurs. I tried try-catch inside each module function before, I think it wasn’t a good way in terms of making fluent logic flow. 
+If I don’t use pointers for vector, it will take much longer time to allocate and deallocate bigger size of memories as a pointer just uses 8 bytes for memory address. But I think list connects objects by linked list which doesn’t necessarily require to allocate and deallocate as they are in random locations in the memory. 

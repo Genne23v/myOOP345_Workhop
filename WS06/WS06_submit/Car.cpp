@@ -1,5 +1,5 @@
 // Workshop 6: Part 2
-// Date: 2021/07/07
+// Date: 2021/07/06
 // Author: Wonkeun No
 // Student #: 145095196
 // Description:
@@ -26,7 +26,6 @@ namespace sdds
 	Car::Car(std::istream& is)
 	{
 		std::string tmp[size];
-		std::string tag;
 		size_t i = 0; 
 		
 		while (i < size)

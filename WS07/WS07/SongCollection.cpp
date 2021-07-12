@@ -8,8 +8,8 @@ namespace sdds
 {
 	std::string removeSpaces(std::string str)
 	{
-		int strBegin = str.find_first_not_of(' ');
-		int strEnd = str.find_last_not_of(' ');
+		size_t strBegin = str.find_first_not_of(' ');
+		size_t strEnd = str.find_last_not_of(' ');
 		std::string returnStr;
 
 		if (strBegin != std::string::npos && strEnd != std::string::npos)

@@ -1,8 +1,0 @@
-Name: Wonkeun No
-Student ID: 145095196
-Section: NBB
-
-I used push_back, sort, begin, end, any_of, for_each, copy_if, replace_if, accumulate to implement my code in this workshop. push_back is to add extracted data to the list container. for_each, begin and end functions are to loop my containers to check the container data or to move to another container. sort() is very useful to align the data in a certain order. accumulate is used to sum up the total length of songs. I also tried other ways to sum up the length, but this function name explains the functio nexplicitly and I redo my code for more practice. replace_if is good to remove an invalid album name. Again this function well explains what it does. any_of is used to check if the container has a specific artist song or not. Lastly, I used copy_if to filter data into another container for a selected artist. I could probably utilize another function to perform the same action, for example, I can use none_of for inCollection function, but it’s not a good idea for someone to read my code. 
-Implementing my own algorithm will require a lot of time and efforts, it may not work in a certain condition or data because STL library has been used for long time by many users. I believe many errors have been fixed and performance has been improved continuously. But there will be some advantage to reduce amount of unnecessary library size when I implement on my own. 
-I think sort can be improved by throwing an appropriate message when a user inputs invalid data. I can add else with throw an error and surround client code with try and catch. 
-

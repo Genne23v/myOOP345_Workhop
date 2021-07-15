@@ -1,3 +1,13 @@
+// Workshop 7: Part 2
+// Date: 2021/07/15
+// Author: Wonkeun No
+// Student #: 145095196
+// Description:
+// SongCollection.cpp
+///////////////////////////////////////////////////
+// I have done all the coding by myself and only copied the code that my professor
+// provided to complete my workshops and assignments.
+///////////////////////////////////////////////////
 #include <fstream>
 #include <sstream>
 #include <algorithm>

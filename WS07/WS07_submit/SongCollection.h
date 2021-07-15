@@ -14,6 +14,8 @@ namespace sdds
 		double m_price;
 		std::string m_releaseYear;
 		size_t m_length=0;
+
+		void operator=(const char* str);
 	};
 
 	class SongCollection

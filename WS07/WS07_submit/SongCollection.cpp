@@ -2,6 +2,7 @@
 #include <sstream>
 #include <algorithm>
 #include <list>
+#include <numeric>
 #include "SongCollection.h"
 
 namespace sdds
@@ -84,14 +85,18 @@ namespace sdds
 
 		return time;
 	}
+	
+	size_t getSum(size_t sum, const Song& song)
+	{
+		return sum += song.m_length;
+	}
 	void SongCollection::display(std::ostream& out) const
 	{
 		size_t totalLength = 0;
-		for (auto it = m_songs.begin(); it != m_songs.end(); it++)
-		{
-			out << *it << std::endl;
-			totalLength += it->m_length;
-		}
+		std::for_each(m_songs.begin(), m_songs.end(), 
+			[&out](const Song& song){ out << song << std::endl; });
+			
+		totalLength = std::accumulate(m_songs.begin(), m_songs.end(), totalLength, getSum);
 
 		std::string str("Total Listening Time: ");
 		out.width(88);
@@ -138,34 +143,35 @@ namespace sdds
 			m_songs.sort([](const Song& song1, const Song& song2) {return song1.m_length < song2.m_length; });
 		}
 	}
+
+	bool invalidAlbum(Song& song)
+	{
+		return song.m_album == "[None]";
+	}
+	void Song::operator=(const char* c)
+	{
+		m_album = c;
+	}
 	void SongCollection::cleanAlbum()
 	{
-		for (Song& song : m_songs)
-		{
-			if (song.m_album == "[None]")
-			{
-				song.m_album = "";
-			}
-		}
+		std::replace_if(m_songs.begin(), m_songs.end(), invalidAlbum, "");	
 	}
 	bool SongCollection::inCollection(const std::string& artist) const
 	{
-		bool inCollection = false;
-		for (auto it = m_songs.begin(); it != m_songs.end(); it++)
-		{
-			if (it->m_artist == artist)
-				inCollection = true;
-		}
+		bool inCollection = std::any_of(m_songs.begin(), m_songs.end(), 
+			[&artist](const Song& song)->bool {return song.m_artist == artist; });
+
 		return inCollection;
 	}
 	std::list<Song> SongCollection::getSongsForArtist(const std::string& artist) const
 	{
-		std::list<Song> songsByArtist;
-		for (auto it = m_songs.begin(); it != m_songs.end(); it++)
-		{
-			if (it->m_artist == artist)
-				songsByArtist.push_back(*it);
-		}
+		std::list<Song> songsByArtist(m_songs.size());
+
+		auto it = std::copy_if(m_songs.begin(), m_songs.end(), songsByArtist.begin(),
+			[&artist](const Song& song)->bool { return song.m_artist == artist; });
+		
+		songsByArtist.resize(std::distance(songsByArtist.begin(), it));
+
 		return songsByArtist;
 	}
 }

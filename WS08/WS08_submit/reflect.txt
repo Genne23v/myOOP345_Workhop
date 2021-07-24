@@ -1,0 +1,31 @@
+Name: Wonkeun No
+Student ID: 145095196
+Section: NBB
+
+I allocated a raw pointer to use as tmpProduct = new Product(desc[i].desc, price[j].price);. And the smart pointer syntax is a little longer as it goes like std::unique_ptr<Product> tmpProduct(new Product(desc[i].desc, price[j].price));. But I think the advantage is that smart pointer reduces the managing complexity as the raw pointer requires delete tmpProduct in an appropriate location based on careful error scenario consideration. Otherwise user might lose the track where and when it should be deallocated. Especially considering pointer ownership moves around and creates much complex ownership throughout the program. But we only think about single ownership of unique_ptr and it will be properly handled automatically.
+So my raw pointer implementation is as below. 
+
+try
+{
+	tmpProduct = new Product(desc[i].desc, price[j].price);
+	tmpProduct->validate();
+	priceList += *tmpProduct;
+	delete tmpProduct;
+}
+catch (...)
+{
+	throw std::string("*** Negative prices are invalid ***");
+}
+
+I can add delete operation in catch block to handle the allocated memory in try block properly. Smart pointer deals with this issue much easily as below. 
+
+try 
+{
+	std::unique_ptr<Product> tmpProduct(new Product(desc[i].desc, price[j].price));
+	tmpProduct->validate();
+	priceList += *tmpProduct;
+}
+
+And each will be passed into operator+= as below. 
+Raw pointer ->		List& operator+=(const T& newList)
+Smart pointer ->	List& operator+=(std::unique_ptr<T>& uPtr)

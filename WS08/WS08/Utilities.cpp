@@ -28,6 +28,7 @@ namespace sdds {
 						tmpProduct = new Product(desc[i].desc, price[j].price);
 						tmpProduct->validate();
 						priceList += *tmpProduct;
+						delete tmpProduct;
 					} 
 					catch (...)
 					{

@@ -1,0 +1,8 @@
+Name: Wonkeun No
+Student ID: 145095196
+Section: NBB
+
+
+    why was necessary to use binary files in this workshop and how did you use them
+    why would be important to bind a function to its arguments, and how was it useful in this workshop
+    the advantages of using multiple threads, and how did you accomplished multi-threading in this workshop

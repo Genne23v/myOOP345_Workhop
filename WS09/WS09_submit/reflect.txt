@@ -2,7 +2,9 @@ Name: Wonkeun No
 Student ID: 145095196
 Section: NBB
 
+Binary file contains the data without any formatting which is ok when storing encrypted data since we will not be able to read anyway. As it requires no formatting or conversion, binary files are more efficient to read and write a file. I used an fstream object to read and write a file with binary mode set as fstream fin; fin.open(file, ios::in | ios::binary);. I think it's more convenient to use fstream rather than ifstream/ofstream as one object can do both read and write operations. 
 
-    why was necessary to use binary files in this workshop and how did you use them
-    why would be important to bind a function to its arguments, and how was it useful in this workshop
-    the advantages of using multiple threads, and how did you accomplished multi-threading in this workshop
+I think the reason that we bind a function is that it's easier and less error prone. I used namespace placeholder to use a placeholder argument while keeping all the other arguments that are same for all threads. I binded converter functor as auto cvtBind = bind(convertFtr, _1, key, qtrPos, Cryptor());. It was very useful not to repeat the same variable and the placeholder is very visible in the syntax. 
+
+I checked the time of execution among not using thread, 2threads and 4 threads using chrono library. It was 5, 4, and 2 milliseconds respectively. So, I could clearly see the more threads, the faster. Using threads needs to be implemented carefully as I experienced illegal memory access many times during my implementation. One byte of wrong calculation led to a run-time error which should be avoided all the time. 
+

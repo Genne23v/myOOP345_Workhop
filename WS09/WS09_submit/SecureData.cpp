@@ -71,14 +71,6 @@ namespace w9 {
 	{
 		function<void(char*, char, int, const Cryptor&)> convertFtr = converter;
 
-		vector<char> textContainer(nbytes);
-		/*size_t i = 0;
-		while (i < nbytes)
-		{
-			textContainer.push_back(text[i]);
-			i++;
-		}*/
-
 		size_t qtrPos = nbytes / 4;
 		size_t i = 0, j = 0;
 		char* text1 = new char[qtrPos];
@@ -108,10 +100,7 @@ namespace w9 {
 			text4[j] = text[i];
 			i++, j++;
 		}
-		/*vector<char>::iterator bound1, bound2, bound3, bound4;
-		bound1 = partition(textContainer.begin(), textContainer.begin() + qtrPos, [](char& ch) {return ch; });*/
-
-		//vector<char> bound1(qtrPos), bound2(qtrPos), bound3(qtrPos), bound4(qtrPos);
+		
 		using namespace placeholders;
 		auto cvtBind = bind(convertFtr, _1, key, qtrPos, Cryptor());
 
@@ -120,15 +109,42 @@ namespace w9 {
 		thread t3(cvtBind, text3);
 		thread t4(cvtBind, text4);
 
-		/*thread t1(convertFtr, text, key, halfPos-1, Cryptor());
-		thread t2(convertFtr, text+(halfPos), key, halfPos+(nbytes%2), Cryptor());*/
-
 		t1.join();
 		t2.join();
 		t3.join();
 		t4.join();
 
+		i = 0, j = 0;;
+		while (j < qtrPos)
+		{
+			text[i] = text1[j];
+			i++, j++;
+		}
+		j = 0;
+		while (j < qtrPos)
+		{
+			text[i] = text2[j];
+			i++, j++;
+		}
+		j = 0;
+		while (j < qtrPos)
+		{
+			text[i] = text3[j];
+			i++, j++;
+		}
+		j = 0;
+		while (j < qtrPos)
+		{
+			text[i] = text4[j];
+			i++, j++;
+		}
+
 		encoded = !encoded;
+
+		delete[] text1;
+		delete[] text2;
+		delete[] text3;
+		delete[] text4;
 	}
 
 	void SecureData::backup(const char* file) {
